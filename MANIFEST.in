@@ -1,0 +1,5 @@
+recursive-include docs *
+recursive-include mongotesting/templates *.xml *.html
+include AUTHORS
+include LICENSE
+include README.rst

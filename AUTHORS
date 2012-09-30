@@ -1,0 +1,8 @@
+Primary Authors:
+
+    * Steven Normore
+
+Thanks to
+    * https://github.com/hmarr/mongoengine
+    * https://github.com/etianen/django-reversion=
+    * MongoDB and PyMongo http://api.mongodb.org/python/current/=
