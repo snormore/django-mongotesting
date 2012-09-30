@@ -15,9 +15,9 @@ First, define MONGO_DATABASE_NAME and MONGO_PORT settings. Including the mongo c
     import mongoengine
     mongoengine.connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
 
-If you would like a test mongo db created and destroyed for each test method in a class then inherit the MongoTestCase.
+If you would like a test mongo db created and destroyed for each test method in a class then inherit the MongoTestCase class from mongotesting.testcases.
 
 If you would like a test mongo db created and destroyed for each test class, then define the TEST_RUNNER setting to use MongoTestRunner, as follows:
 
-    TEST_RUNNER = 'fooproject.testrunners.MongoTestRunner'
+    TEST_RUNNER = 'mongotesting.testrunners.MongoTestRunner'
 
