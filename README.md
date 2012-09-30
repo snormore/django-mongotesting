@@ -4,6 +4,13 @@ django-mongotesting
 An extension to the Django web framework that provides testing support for mongoengine dependent modules.
 
 
+Requirements
+============
+
+* Django 1.2+
+* MongoEngine
+* nose - https://github.com/nose-devs/nose
+
 Usage
 =====
 
@@ -25,14 +32,14 @@ If you would like a test mongo db created and destroyed for each test class, the
 Reference
 =========
 
-    * http://mongoengine.org/
-    * https://github.com/hmarr/mongoengine
-    * https://www.djangoproject.com/
-    * http://www.mongodb.org/
-    * https://gist.github.com/3760008
-    * https://github.com/hmarr/mongoengine/blob/master/mongoengine/django/tests.py
-    * https://groups.google.com/forum/?fromgroups=#!topic/mongoengine-dev/AKvPw3YJL9E
-    * http://bit.ly/PFKbZm
-    * http://nubits.org/post/django-mongodb-mongoengine-testing-with-custom-test-runner/
-    * http://nubits.org/post/django-mongodb-mongoengine-testing-with-a-custom-mongo-test-case/
+* http://mongoengine.org/
+* https://github.com/hmarr/mongoengine
+* https://www.djangoproject.com/
+* http://www.mongodb.org/
+* https://gist.github.com/3760008
+* https://github.com/hmarr/mongoengine/blob/master/mongoengine/django/tests.py
+* https://groups.google.com/forum/?fromgroups=#!topic/mongoengine-dev/AKvPw3YJL9E
+* http://bit.ly/PFKbZm
+* http://nubits.org/post/django-mongodb-mongoengine-testing-with-custom-test-runner/
+* http://nubits.org/post/django-mongodb-mongoengine-testing-with-a-custom-mongo-test-case/
 
