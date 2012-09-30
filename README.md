@@ -21,3 +21,18 @@ If you would like a test mongo db created and destroyed for each test class, the
 
     TEST_RUNNER = 'mongotesting.testrunners.MongoTestRunner'
 
+
+Reference
+=========
+
+    * http://mongoengine.org/
+    * https://github.com/hmarr/mongoengine
+    * https://www.djangoproject.com/
+    * http://www.mongodb.org/
+    * https://gist.github.com/3760008
+    * https://github.com/hmarr/mongoengine/blob/master/mongoengine/django/tests.py
+    * https://groups.google.com/forum/?fromgroups=#!topic/mongoengine-dev/AKvPw3YJL9E
+    * http://bit.ly/PFKbZm
+    * http://nubits.org/post/django-mongodb-mongoengine-testing-with-custom-test-runner/
+    * http://nubits.org/post/django-mongodb-mongoengine-testing-with-a-custom-mongo-test-case/
+
