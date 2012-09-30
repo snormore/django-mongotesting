@@ -3,6 +3,8 @@ django-mongotesting
 
 An extension to the Django web framework that provides testing support for mongoengine dependent modules.
 
+See http://nubits.org/post/testing-with-django-and-mongoengine/
+
 
 Requirements
 ============
@@ -40,6 +42,7 @@ Reference
 * https://github.com/hmarr/mongoengine/blob/master/mongoengine/django/tests.py
 * https://groups.google.com/forum/?fromgroups=#!topic/mongoengine-dev/AKvPw3YJL9E
 * http://bit.ly/PFKbZm
+* http://nubits.org/post/testing-with-django-and-mongoengine/
 * http://nubits.org/post/django-mongodb-mongoengine-testing-with-custom-test-runner/
 * http://nubits.org/post/django-mongodb-mongoengine-testing-with-a-custom-mongo-test-case/
 
