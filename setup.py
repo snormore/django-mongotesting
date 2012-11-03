@@ -13,4 +13,5 @@ setup(
     packages=[
         'mongotesting',
     ],
+    install_requires=['django', 'mongoengine', 'nose'],
 )
