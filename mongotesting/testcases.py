@@ -35,6 +35,7 @@ class MongoTestCase(TestCase):
             mongodb_names.append(mongodb_name)
         if not mongodb_names:
             print '* Warning: no mongodb specified in settings using MONGO_DATABASE_NAME or MONGO_DATABASES.'
+        self.mongodb_names = mongodb_names
         super(MongoTestCase, self).__init__(*args, **kwargs)
     
     def _pre_setup(self):
