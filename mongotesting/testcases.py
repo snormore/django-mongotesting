@@ -28,7 +28,7 @@ class MongoTestCase(TestCase):
         else:
             mongodb_name = None
         if hasattr(settings, 'MONGO_DATABASES'):
-            mongodb_names = ['test_%s' % (db_name, ) for db_name in settings.MONGO_DATABASES]
+            mongodb_names = ['test_%s' % (db_name, ) for db_name in settings.MONGO_DATABASES.keys()]
         else:
             mongodb_names = []
         if mongodb_name:
@@ -44,17 +44,17 @@ class MongoTestCase(TestCase):
 
         from mongoengine.connection import connect, disconnect, get_connection
         for db_name in self.mongodb_names:
-            connection = get_connection()
+            connection = get_connection(db_name)
             connection.drop_database(db_name)
-            disconnect()
+            disconnect(db_name)
             connect(db_name, port=settings.MONGO_PORT)
         super(MongoTestCase, self)._pre_setup()
 
     def _post_teardown(self):
         from mongoengine.connection import get_connection, disconnect
         for db_name in self.mongodb_names:
-            connection = get_connection()
+            connection = get_connection(db_name)
             connection.drop_database(db_name)
-            disconnect()
+            disconnect(db_name)
         super(MongoTestCase, self)._post_teardown()
 
