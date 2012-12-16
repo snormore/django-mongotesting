@@ -16,13 +16,17 @@ Requirements
 Usage
 =====
 
-First, define MONGO_DATABASE_NAME and MONGO_PORT settings. Including the mongo connection bit, you should have something like this in your settings.py file:
+First, define MONGO_DATABASES and MONGO_PORT settings. Including the mongo connection bit, you should have something like this in your settings.py file:
 
-    MONGO_DATABASE_NAME = 'fooproject'
+    MONGO_DATABASES = {
+        # db_name, db_alias
+        'fooproject': 'default', 
+    }
     MONGO_HOST = 'localhost'
     MONGO_PORT = 27017
     import mongoengine
-    mongoengine.connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
+    for db_name, db_alias in MONGO_DATABASES.items():
+        mongoengine.connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
 
 If you would like a test mongo db created and destroyed for each test method in a class then inherit the MongoTestCase class from the mongotesting module.
 

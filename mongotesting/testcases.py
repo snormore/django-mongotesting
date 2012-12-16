@@ -21,40 +21,24 @@ class MongoTestCase(TestCase):
     """
         TestCase class that clear the collection between the tests
     """
-
-    def __init__(self, *args, **kwargs):
-        if hasattr(settings, 'MONGO_DATABASE_NAME'):
-            mongodb_name = 'test_%s' % settings.MONGO_DATABASE_NAME
-        else:
-            mongodb_name = None
-        if hasattr(settings, 'MONGO_DATABASES'):
-            mongodb_names = ['test_%s' % (db_name, ) for db_name in settings.MONGO_DATABASES.keys()]
-        else:
-            mongodb_names = []
-        if mongodb_name:
-            mongodb_names.append(mongodb_name)
-        if not mongodb_names:
-            print '* Warning: no mongodb specified in settings using MONGO_DATABASE_NAME or MONGO_DATABASES.'
-        self.mongodb_names = mongodb_names
-        super(MongoTestCase, self).__init__(*args, **kwargs)
     
     def _pre_setup(self):
         if PY3:
             raise SkipTest('django does not have Python 3 support')
 
         from mongoengine.connection import connect, disconnect, get_connection
-        for db_name in self.mongodb_names:
-            connection = get_connection(db_name)
+        for db_name, db_alias in settings.MONGO_DATABASES.items():
+            connection = get_connection(db_alias)
             connection.drop_database(db_name)
-            disconnect(db_name)
+            disconnect(db_alias)
             connect(db_name, port=settings.MONGO_PORT)
         super(MongoTestCase, self)._pre_setup()
 
     def _post_teardown(self):
         from mongoengine.connection import get_connection, disconnect
-        for db_name in self.mongodb_names:
-            connection = get_connection(db_name)
+        for db_name, db_alias in settings.MONGO_DATABASES.items():
+            connection = get_connection(db_alias)
             connection.drop_database(db_name)
-            disconnect(db_name)
+            disconnect(db_alias)
         super(MongoTestCase, self)._post_teardown()
 
