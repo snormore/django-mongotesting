@@ -1,6 +1,5 @@
 #coding: utf-8
 from django.test.simple import DjangoTestSuiteRunner
-from nose.plugins.skip import SkipTest
 from mongoengine.python_support import PY3
 from mongoengine import connect
 try:
