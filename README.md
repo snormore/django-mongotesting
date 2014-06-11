@@ -11,7 +11,6 @@ Requirements
 
 * Django 1.2+
 * MongoEngine
-* nose - https://github.com/nose-devs/nose
 
 Usage
 =====

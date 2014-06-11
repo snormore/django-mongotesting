@@ -1,5 +1,4 @@
 #coding: utf-8
-from nose.plugins.skip import SkipTest
 
 from mongoengine.python_support import PY3
 from mongoengine import connect
@@ -23,9 +22,6 @@ class MongoTestCase(TestCase):
     """
     
     def _pre_setup(self):
-        if PY3:
-            raise SkipTest('django does not have Python 3 support')
-
         from mongoengine.connection import connect, disconnect, get_connection
         for db_name, db_alias in settings.MONGO_DATABASES.items():
             connection = get_connection(db_alias)
